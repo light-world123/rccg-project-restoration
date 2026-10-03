@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RCCG The Calvary | Project Restoration</title>
+<meta name="description" content="RCCG The Calvary, Oshodi Lagos — Project Restoration: building a new 1,000-seat worship and ministry facility.">
+<style>
+:root{
+  --red:#b20d18;--red2:#8d0912;--gold:#d9a441;--navy:#101827;--cream:#faf7f1;
+  --white:#fff;--ink:#172033;--muted:#687083;--line:#e9e3d8;--shadow:0 20px 60px rgba(16,24,39,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.65}
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%;object-fit:cover}
+.container{width:min(1160px,92%);margin:auto}
+.topbar{background:var(--navy);color:#fff;font-size:.86rem;padding:9px 0}
+.topbar .container{display:flex;justify-content:space-between;gap:20px}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,.06)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900}
+.brand-mark{width:44px;height:44px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-size:1rem;box-shadow:0 8px 20px rgba(178,13,24,.22)}
+.brand small{display:block;color:var(--muted);font-weight:600;font-size:.68rem;letter-spacing:.12em}
+.brand strong{display:block;font-size:.95rem}
+nav{display:flex;align-items:center;gap:25px;font-size:.9rem;font-weight:700}
+nav a:hover{color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;padding:13px 21px;font-weight:800;cursor:pointer;transition:.25s}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 12px 24px rgba(178,13,24,.22)}
+.btn-red:hover{background:var(--red2);transform:translateY(-2px)}
+.btn-light{background:#fff;color:var(--navy)}
+.menu{display:none;background:none;border:0;font-size:1.7rem}
+.hero{min-height:690px;display:grid;align-items:center;position:relative;color:#fff;overflow:hidden;background:#111}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,12,21,.9) 0%,rgba(8,12,21,.66) 46%,rgba(8,12,21,.24) 100%),url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=2200&q=85') center/cover}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 30%,rgba(217,164,65,.18),transparent 35%);pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:760px;padding:95px 0}
+.kicker{display:inline-flex;gap:9px;align-items:center;color:#f3d78d;font-weight:900;letter-spacing:.14em;text-transform:uppercase;font-size:.76rem}
+.kicker:before{content:"";width:28px;height:2px;background:var(--gold)}
+h1{font-family:Georgia,serif;font-size:clamp(3rem,7vw,6.2rem);line-height:.98;margin:18px 0 24px}
+.hero p{font-size:1.12rem;max-width:680px;color:#eef1f5}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.statstrip{margin-top:52px;display:flex;flex-wrap:wrap;gap:12px}
+.stat{padding:15px 19px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:16px;backdrop-filter:blur(10px)}
+.stat b{display:block;font-size:1.15rem;color:#fff}.stat span{font-size:.76rem;color:#dce1e8}
+section{padding:95px 0}
+.eyebrow{color:var(--red);font-size:.76rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
+h2{font-family:Georgia,serif;font-size:clamp(2.1rem,4vw,3.5rem);line-height:1.1;margin:10px 0 18px}
+.lead{color:var(--muted);max-width:720px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.story-img{height:540px;border-radius:28px;box-shadow:var(--shadow)}
+.quote{margin-top:28px;padding:25px 28px;border-left:4px solid var(--gold);background:var(--cream);border-radius:0 18px 18px 0;font-family:Georgia,serif;font-size:1.15rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.card{padding:28px;background:#fff;border:1px solid var(--line);border-radius:22px;transition:.3s;box-shadow:0 8px 30px rgba(16,24,39,.04)}
+.card:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
+.icon{width:48px;height:48px;border-radius:14px;background:#fff2f2;color:var(--red);display:grid;place-items:center;font-size:1.3rem;margin-bottom:18px}
+.card h3{margin-bottom:7px}
+.card p{color:var(--muted);font-size:.94rem}
+.dark{background:var(--navy);color:#fff}
+.dark .lead{color:#bfc6d2}
+.budget{display:grid;grid-template-columns:1fr 1.15fr;gap:50px;align-items:start}
+.big-money{font-size:clamp(3.5rem,7vw,6.2rem);font-weight:900;line-height:1;color:#fff;margin:15px 0}
+.big-money span{font-size:1rem;color:#bfc6d2;font-weight:600}
+.budget-list{background:#fff;color:var(--ink);border-radius:24px;overflow:hidden}
+.brow{display:flex;justify-content:space-between;gap:20px;padding:17px 21px;border-bottom:1px solid var(--line)}
+.brow:last-child{border:0;background:#fff8e8;font-weight:900}
+.brow small{color:var(--muted)}
+.note{font-size:.78rem;color:#bfc6d2;margin-top:18px}
+.gallery{display:grid;grid-template-columns:1.4fr .8fr .8fr;grid-auto-rows:210px;gap:14px;margin-top:35px}
+.gallery img{height:100%;border-radius:18px;cursor:pointer;transition:.3s}
+.gallery img:hover{transform:scale(1.015);filter:brightness(.86)}
+.gallery img:first-child{grid-row:span 2}.gallery-item{position:relative;height:100%;overflow:hidden;border-radius:18px}.gallery-item img{height:100%}.gallery-caption{position:absolute;left:12px;right:12px;bottom:12px;padding:7px 10px;background:rgba(0,0,0,.68);color:#fff;border-radius:9px;font-size:.75rem;font-weight:800}
+.books{display:grid;grid-template-columns:repeat(5,1fr);gap:15px;margin-top:35px}
+.book{min-height:300px;border-radius:18px;padding:14px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:linear-gradient(150deg,#b20d18,#401018);box-shadow:0 15px 35px rgba(0,0,0,.1);transition:.3s}.book:hover{transform:translateY(-7px);box-shadow:0 22px 45px rgba(0,0,0,.16)}.book:nth-child(2),.book:nth-child(3){background:#f4f4f4}.book:nth-child(4){background:linear-gradient(150deg,#30573b,#14271b)}.book:nth-child(5){background:linear-gradient(150deg,#603b66,#211428)}.book-cover{width:100%;height:250px;object-fit:contain;background:#fff;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,.14)}.book b{font-family:Georgia,serif;font-size:1.15rem;line-height:1.15}
+.donate{background:linear-gradient(135deg,#b20d18,#7d0710);color:#fff;position:relative;overflow:hidden}
+.donate:before{content:"";position:absolute;width:480px;height:480px;border:70px solid rgba(255,255,255,.05);border-radius:50%;right:-180px;top:-180px}
+.donate-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.tiers{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:25px}
+.tier{padding:16px 18px;border:1px solid rgba(255,255,255,.2);border-radius:15px;background:rgba(255,255,255,.08)}
+.tier b{display:block;color:#f8d98d}.tier span{font-size:.85rem;color:#f1dede}
+.donation-box,.partner-box{margin-top:28px;padding:24px;border:1px solid rgba(255,255,255,.2);border-radius:20px;background:rgba(255,255,255,.08)}
+.donation-box h3,.partner-box h3{color:#fff;margin-bottom:10px;font-family:Georgia,serif;font-size:1.45rem}
+.bank-details{margin-top:18px;background:#fff;color:var(--ink);border-radius:15px;overflow:hidden}
+.bank-details div{padding:13px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:18px;align-items:center}
+.bank-details div:last-child{border-bottom:0}
+.bank-details span{color:var(--muted);font-size:.82rem}
+.account-number{font-size:1.15rem;letter-spacing:.06em}
+.partner-box{text-align:center}
+.qr-placeholder{width:150px;height:150px;margin:16px auto;border:5px solid #fff;background:repeating-linear-gradient(45deg,#111 0 8px,#fff 8px 16px);color:#fff;display:grid;place-items:center;font-weight:900;font-size:.85rem;text-shadow:0 1px 3px #000}
+.partner-box p{color:#f1dede;margin-top:8px;font-size:.9rem}
+.partner-box p strong{color:#f4d17d}
+.contact-note{font-size:.82rem!important}
+.form{background:#fff;color:var(--ink);padding:28px;border-radius:24px;box-shadow:var(--shadow)}
+.form h3{font-family:Georgia,serif;font-size:1.7rem;margin-bottom:15px}
+input,select,textarea{width:100%;padding:13px 14px;border:1px solid #ddd7ce;border-radius:11px;margin:7px 0 11px;font:inherit}
+textarea{min-height:95px;resize:vertical}
+.form .btn{width:100%}
+.accountability{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:35px}
+.step{padding:24px;border-radius:20px;background:var(--cream);border:1px solid var(--line)}
+.step strong{display:block;color:var(--red);margin-bottom:8px}
+.cta{background:var(--cream);text-align:center}
+.cta p{max-width:680px;margin:0 auto 25px;color:var(--muted)}
+footer{background:#0b111e;color:#c8ced8;padding:45px 0}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:35px}
+footer h3{color:#fff;margin-bottom:10px}footer p,footer a{font-size:.9rem;color:#9da6b5}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:30px;padding-top:20px;font-size:.78rem;display:flex;justify-content:space-between}
+.reveal{opacity:0;transform:translateY(25px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:100;align-items:center;justify-content:center;padding:20px}
+.modal.show{display:flex}.modal img{max-width:1000px;max-height:85vh;width:auto;border-radius:15px}.close{position:fixed;right:25px;top:20px;color:#fff;font-size:2rem;cursor:pointer}
+@media(max-width:900px){
+ nav{display:none}.menu{display:block}.cards{grid-template-columns:1fr 1fr}.split,.budget,.donate-grid{grid-template-columns:1fr}.books{grid-template-columns:repeat(2,1fr)}.accountability{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+ .topbar .container{flex-direction:column;gap:2px}.hero{min-height:650px}.hero-content{padding:75px 0}.hero p{font-size:1rem}.cards,.accountability,.footer-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.gallery img:first-child{grid-row:span 2}.gallery-item{position:relative;height:100%;overflow:hidden;border-radius:18px}.gallery-item img{height:100%}.gallery-caption{position:absolute;left:12px;right:12px;bottom:12px;padding:7px 10px;background:rgba(0,0,0,.68);color:#fff;border-radius:9px;font-size:.75rem;font-weight:800}.books{grid-template-columns:1fr 1fr}.tiers{grid-template-columns:1fr}section{padding:70px 0}.story-img{height:380px}.big-money{font-size:4rem}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="container"><span>RCCG The Calvary • Zonal Headquarters</span><span>19 Abayomi Street, off Daudu Road, Oshodi – Lagos</span></div></div>
+
+<header>
+<div class="container nav">
+<a class="brand" href="#home"><span class="brand-mark">✦</span><span><small>THE REDEEMED CHRISTIAN CHURCH OF GOD</small><strong>THE CALVARY</strong></span></a>
+<nav><a href="#story">Our Story</a><a href="#vision">Vision</a><a href="#gallery">Gallery</a><a href="#books">Books</a><a href="#project">Project</a><a href="#give" class="btn btn-red">Give & Partner</a></nav>
+<button class="menu" onclick="document.querySelector('nav').style.display=document.querySelector('nav').style.display==='flex'?'none':'flex'">☰</button>
+</div>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="container hero-content reveal">
+<div class="kicker">Project Restoration</div>
+<h1>From Books to a Building.</h1>
+<p>A vision to build a new home for worship, discipleship, family restoration, youth and children development, evangelism and community impact in Oshodi, Lagos.</p>
+<div class="hero-actions"><a href="#project" class="btn btn-red">Explore the Vision</a><a href="#give" class="btn btn-light">Become a Kingdom Partner</a></div>
+<div class="statstrip">
+<div class="stat"><b>1,000+</b><span>proposed worship capacity</span></div>
+<div class="stat"><b>₦1.15B</b><span>preliminary project estimate</span></div>
+<div class="stat"><b>1997</b><span>church planting journey began</span></div>
+</div>
+</div>
+</section>
+
+<section id="story">
+<div class="container split">
+<div class="reveal"><div class="eyebrow">Our Story</div><h2>A journey of faith, sacrifice and restoration.</h2>
+<p class="lead">The Calvary was planted in 1997 by graduating students of the Redeemed Christian Bible College. After several relocations, the church settled at 19 Abayomi Street, Oshodi, in January 2004 and grew from parish to Area Headquarters and then Zonal Headquarters.</p>
+<div class="quote">“The building is the structure. The people are the purpose.”</div></div>
+<img class="story-img reveal" src="https://images.unsplash.com/photo-1548625361-58a6b4d4f7b6?auto=format&fit=crop&w=1200&q=85" alt="Church worship interior">
+</div>
+</section>
+
+<section class="dark" id="vision">
+<div class="container reveal"><div class="eyebrow" style="color:#f0c86b">Why Project Restoration?</div><h2>A place built for worship — and for people.</h2><p class="lead">The current worship facility has become inadequate for the growing congregation and expanding ministry activities. The proposed development is designed to provide a larger, safer and more functional environment for present needs and future growth.</p>
+<div class="cards">
+<div class="card"><div class="icon">✦</div><h3>Worship & Prayer</h3><p>A purpose-built auditorium with gallery seating, altar, choir and music areas, circulation and accessibility provisions.</p></div>
+<div class="card"><div class="icon">♡</div><h3>Families & Counselling</h3><p>Spaces for counselling, prayer, marriage and family ministry, alongside pastoral and administrative support.</p></div>
+<div class="card"><div class="icon">◉</div><h3>Children & Youth</h3><p>Dedicated ministry spaces to nurture children, disciple young people and develop future leaders.</p></div>
+<div class="card"><div class="icon">⌁</div><h3>Community Impact</h3><p>Capacity to strengthen initiatives including medical outreaches, water provision, educational support and care for vulnerable people.</p></div>
+<div class="card"><div class="icon">⚑</div><h3>Evangelism & Discipleship</h3><p>A centre for preaching the Word, church planting, training, conferences and Kingdom expansion.</p></div>
+<div class="card"><div class="icon">⌂</div><h3>Future Growth</h3><p>A sustainable ministry facility planned around approximately 1,000 worshippers, including gallery seating.</p></div>
+</div></div>
+</section>
+
+<section id="project">
+<div class="container budget">
+<div class="reveal"><div class="eyebrow">The Building Vision</div><h2>Designed for a growing congregation.</h2><p class="lead">The proposed facility is a new church auditorium and multipurpose ministry facility in Oshodi, Lagos State, Nigeria.</p><div class="big-money">₦1.15B <span>preliminary target</span></div><p class="lead">The figure is a fundraising estimate and will be refined after site acquisition, professional design and a Bill of Quantities.</p></div>
+<div class="budget-list reveal">
+<div class="brow"><span>Land acquisition</span><b>₦300M</b></div>
+<div class="brow"><span>Documentation & approvals</span><b>₦50M</b></div>
+<div class="brow"><span>1,000-seat auditorium + gallery</span><b>₦550M</b></div>
+<div class="brow"><span>Professional sound system</span><b>₦35M</b></div>
+<div class="brow"><span>LED screens & video</span><b>₦25M</b></div>
+<div class="brow"><span>Generator & installation</span><b>₦45M</b></div>
+<div class="brow"><span>Transformer & electrical</span><b>₦25M</b></div>
+<div class="brow"><span>Major air-conditioning</span><b>₦80M</b></div>
+<div class="brow"><span>Musical instruments</span><b>₦20M</b></div>
+<div class="brow"><span>Contingency / price variation</span><b>₦20M</b></div>
+<div class="brow"><span>TOTAL PRELIMINARY ESTIMATE</span><b>₦1.15B</b></div>
+</div>
+</div>
+</section>
+
+<section id="gallery" style="background:var(--cream)">
+<div class="container reveal"><div class="eyebrow">Visual Inspiration</div><h2>A place for generations.</h2><p class="lead">A look at the church's vision, worship environment and community impact. The community service photo below highlights practical outreach and care for people.</p>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1400&q=85" alt="Church exterior" onclick="openImg(this.src)">
+<img src="https://images.unsplash.com/photo-1548625361-58a6b4d4f7b6?auto=format&fit=crop&w=1000&q=85" alt="Church interior" onclick="openImg(this.src)">
+<img src="https://images.unsplash.com/photo-1519491050282-cf00c82424b4?auto=format&fit=crop&w=1000&q=85" alt="Worship gathering" onclick="openImg(this.src)">
+<img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1000&q=85" alt="Community space" onclick="openImg(this.src)">
+<img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=1000&q=85" alt="Church architecture" onclick="openImg(this.src)">
+<div class="gallery-item">
+  <img src="images/pics 1.jpeg" alt="RCCG The Calvary community medical outreach service" onclick="openImg(this.src)"><span class="gallery-caption">Community Medical Outreach</span>
+</div>
+<div class="gallery-item">
+  <img src="images/pics 2.jpeg" alt="RCCG The Calvary community medical outreach service" onclick="openImg(this.src)"><span class="gallery-caption">Community Medical Outreach</span>
+</div>
+<div class="gallery-item">
+  <img src="images/pics 3.jpeg" alt="RCCG The Calvary community medical outreach service" onclick="openImg(this.src)"><span class="gallery-caption">Community Medical Outreach</span>
+</div>
+<div class="gallery-item">
+  <img src="images/pics 4.jpeg" alt="RCCG The Calvary community medical outreach service" onclick="openImg(this.src)"><span class="gallery-caption">Community Medical Outreach</span>
+</div>
+<div class="gallery-item">
+  <img src="images/pics 5.jpeg" alt="RCCG The Calvary community medical outreach service" onclick="openImg(this.src)"><span class="gallery-caption">Community Medical Outreach</span>
+</div>
+<div class="gallery-item">
+  <img src="images/pics 6.jpeg" alt="RCCG The Calvary community medical outreach service" onclick="openImg(this.src)"><span class="gallery-caption">Community Medical Outreach</span>
+</div>
+</div></div>
+</section>
+
+<section id="books">
+<div class="container reveal"><div class="eyebrow">Books to Build</div><h2>Five books. One Kingdom vision.</h2><p class="lead">The five completed books are part of the awareness and fundraising strategy surrounding Project Restoration.</p>
+<div class="books">
+<div class="book"><img class="book-cover" src="images/YOUR MARRIAGE CAN BE HEALED.jpg" alt="Your Marriage Can Be Healed — A Guide to Restoring Your Relationship"></div>
+<div class="book"><img class="book-cover" src="images/KICK OUT THAT STRESSOR.jpg" alt="Kick Out That Stressor — A Practical Guide to Handling Marriage Killers"></div>
+<div class="book"><img class="book-cover" src="images/CROWNED IN VICTORY.jpg" alt="Crowned in Victory — Women Who Conquered Life Battles"></div>
+<div class="book"><img class="book-cover" src="images/THE TRANSFORMED HUSBAND.jpg" alt="The Transformed Husband — A Guide to Rediscovering Your Identity in Christ"></div>
+<div class="book"><img class="book-cover" src="images/THE TRANSFORMED WIFE.jpg" alt="The Transformed Wife — A Guide to Rediscovering Your Identity in Christ"></div>
+</div>
+</div>
+</section>
+
+<section class="donate" id="give">
+<div class="container donate-grid">
+<div class="reveal"><div class="eyebrow" style="color:#f4d17d">Give & Partner</div><h2>Take your place in the story.</h2><p>We are not asking one person to carry the entire project. The invitation is to participate through giving, prayer, connections, professional expertise, church mobilisation or support for a specific milestone.</p>
+<p style="margin-top:25px;color:#f1dede">You can participate through giving, prayer, connecting potential partners, professional expertise, supporting a project milestone, or mobilising your church or organisation.</p>
+
+<div class="donation-box">
+<h3>DONATE HERE</h3>
+<p>We therefore humbly invite you to make your financial donation for the Book Launch towards <strong>Project Restoration</strong>.</p>
+<div class="bank-details">
+<div><span>Account Name</span><strong>RCCG Calvary Building Project Act.</strong></div>
+<div><span>Bank</span><strong>Zenith Bank</strong></div>
+<div><span>Account Number</span><strong class="account-number">1221548533</strong></div>
+</div>
+</div>
+
+<div class="partner-box">
+<h3>READY TO PARTNER?</h3>
+<div class="qr-placeholder" aria-label="QR code placeholder">QR CODE</div>
+<p><strong>SCAN TO GIVE / EXPRESS INTEREST</strong></p>
+<p>Donation/Partnership Portal: <em>Insert approved payment or donation link</em></p>
+<p class="contact-note">For bank transfer or international giving instructions, please contact the Project Restoration Team.</p>
+</div>
+</div>
+<div class="form reveal"><h3>Express Your Interest</h3><p style="color:var(--muted);font-size:.9rem">This form is a front-end enquiry form. Add the official church bank/payment details before enabling live donations.</p>
+<form onsubmit="event.preventDefault();alert('Thank you. Your interest has been recorded on this demo page. Connect this form to the church email/backend before launch.');">
+<label>Name</label><input required placeholder="Your name">
+<label>Email / WhatsApp</label><input required placeholder="Contact details">
+<label>How would you like to partner?</label><select><option>Giving</option><option>Prayer</option><option>Connect a potential partner</option><option>Professional expertise</option><option>Support a project milestone</option><option>Church / organisation mobilisation</option></select>
+<label>Message</label><textarea placeholder="Tell us how you would like to participate"></textarea>
+<button class="btn btn-red" type="submit">Send Partnership Enquiry</button>
+</form></div>
+</div>
+</section>
+
+<section>
+<div class="container reveal"><div class="eyebrow">Accountability</div><h2>Every donation will be treated as a trust.</h2><p class="lead">The Project Restoration framework commits to integrity, transparency, accountability, responsible stewardship and faithfulness.</p>
+<div class="accountability">
+<div class="step"><strong>01 • Receive</strong>Project funds are intended to be tracked as restricted project funds and, where practicable, separated from routine church operations.</div>
+<div class="step"><strong>02 • Record</strong>Donation records may include donor, date, amount, currency, designated purpose and transaction details.</div>
+<div class="step"><strong>03 • Report</strong>Financial updates may show funds received, committed, spent and remaining, together with project progress.</div>
+<div class="step"><strong>04 • Steward</strong>Major works and procurement are intended to receive appropriate professional oversight and documentation.</div>
+</div>
+</div>
+</section>
+
+<section class="cta">
+<div class="container reveal"><div class="eyebrow">A Kingdom Legacy</div><h2>“Unless the LORD builds the house, they labor in vain who build it.”</h2><p>Psalm 127:1 (NKJV). We invite you to become part of this story — not simply as a donor or sponsor, but as a Kingdom partner.</p><a href="#give" class="btn btn-red">Become a Partner</a></div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><h3>RCCG The Calvary</h3><p>The Redeemed Christian Church of God, The Calvary Church — Zonal Headquarters.</p><p style="margin-top:10px">19 Abayomi Street, off Daudu Road, Oshodi – Lagos.</p></div>
+<div><h3>Project Restoration</h3><p><a href="#story">Our Story</a></p><p><a href="#project">Project Vision</a></p><p><a href="#give">Give & Partner</a></p></div>
+<div><h3>Important Note</h3><p>The project figures shown here are preliminary fundraising estimates and should be updated with verified professional quotations and official giving details before public fundraising.</p></div>
+</div>
+<div class="footer-bottom"><span>© 2026 RCCG The Calvary • Project Restoration</span><span>Built with faith, purpose & excellence.</span></div>
+</div>
+</footer>
+
+<div class="modal" id="modal" onclick="this.classList.remove('show')"><span class="close">×</span><img id="modalImg" alt="Gallery image"></div>
+<script>
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+function openImg(src){document.getElementById('modalImg').src=src;document.getElementById('modal').classList.add('show')}
+</script>
+</body>
+</html>
